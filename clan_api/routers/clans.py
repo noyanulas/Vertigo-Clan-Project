@@ -2,6 +2,8 @@ from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
 from sqlalchemy.exc import IntegrityError
+from sqlalchemy import select
+from fastapi import Query
 
 from clan_api.db.session import get_db
 from clan_api.db.models import Clan
@@ -33,6 +35,19 @@ def create_clan(payload: ClanCreate, db: Session = Depends(get_db)):
 @router.get("/", response_model=List[ClanOut])
 def list_clans(db: Session = Depends(get_db)):
     return db.query(Clan).order_by(Clan.created_at.desc()).all()
+
+@router.get("/search", response_model=list[ClanOut])
+def search_clans(
+    name: str = Query(..., min_length=3),
+    db: Session = Depends(get_db),
+):
+    stmt = (
+        select(Clan)
+        .where(Clan.name.ilike(f"%{name}%"))
+        .order_by(Clan.created_at.desc())
+    )
+    result = db.execute(stmt).scalars().all()
+    return result
 
 
 from uuid import UUID
