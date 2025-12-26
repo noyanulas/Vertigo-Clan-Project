@@ -1,11 +1,14 @@
 import uuid
-from sqlalchemy import Column, String, DateTime, func
+from sqlalchemy import Column, String, DateTime, func, UniqueConstraint
 from sqlalchemy.dialects.postgresql import UUID
 
 from clan_api.db.base import Base
 
 class Clan(Base):
     __tablename__ = "clans"
+    __table_args__ = (
+        UniqueConstraint("name", name="uq_clans_name"),
+    )
 
     id = Column(
         UUID(as_uuid=True),

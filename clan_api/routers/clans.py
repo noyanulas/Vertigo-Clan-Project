@@ -1,6 +1,7 @@
 from typing import List
 from fastapi import APIRouter, Depends, HTTPException
 from sqlalchemy.orm import Session
+from sqlalchemy.exc import IntegrityError
 
 from clan_api.db.session import get_db
 from clan_api.db.models import Clan
@@ -16,7 +17,16 @@ def create_clan(payload: ClanCreate, db: Session = Depends(get_db)):
         region=payload.region,
     )
     db.add(clan)
-    db.commit()
+
+    try:
+        db.commit()
+    except IntegrityError:
+        db.rollback()
+        raise HTTPException(
+            status_code=409,
+            detail="Clan name already exists"
+        )
+
     db.refresh(clan)
     return clan
 
