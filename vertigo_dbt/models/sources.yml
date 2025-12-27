@@ -1,0 +1,8 @@
+version: 2
+
+sources:
+  - name: analytics
+    database: vertigo-clan-api-ulas
+    schema: Vertigo_analytics
+    tables:
+      - name: user_events

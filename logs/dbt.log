@@ -1,0 +1,30 @@
+[0m18:06:44.423546 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'start', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E50D3A4BC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E50B0FF860>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E50CE7C4A0>]}
+
+
+============================== 18:06:44.443629 | a987a387-e427-45a2-abed-f114af55d034 ==============================
+[0m18:06:44.443629 [info ] [MainThread]: Running with dbt=1.11.2
+[0m18:06:44.443629 [debug] [MainThread]: running dbt with arguments {'version_check': 'True', 'no_print': 'None', 'static_parser': 'True', 'warn_error_options': 'WarnErrorOptionsV2(error=[], warn=[], silence=[])', 'target_path': 'None', 'printer_width': '80', 'write_json': 'True', 'empty': 'None', 'log_cache_events': 'False', 'introspect': 'True', 'cache_selected_only': 'False', 'log_format': 'default', 'debug': 'False', 'fail_fast': 'False', 'profiles_dir': 'C:\\Users\\noyan\\.dbt', 'send_anonymous_usage_stats': 'True', 'quiet': 'False', 'warn_error': 'None', 'partial_parse': 'True', 'use_colors': 'True', 'indirect_selection': 'eager', 'invocation_command': 'dbt init vertigo_dbt', 'use_experimental_parser': 'False', 'log_path': 'logs'}
+[0m18:06:44.474832 [info ] [MainThread]: Creating dbt configuration folder at C:\Users\noyan\.dbt
+[0m18:06:44.477832 [debug] [MainThread]: Starter project path: D:\Vertigo-Clan-Project\venv\Lib\site-packages\dbt\include\starter_project
+[0m18:06:44.504887 [info ] [MainThread]: 
+Your new dbt project "vertigo_dbt" was created!
+
+For more information on how to configure the profiles.yml file,
+please consult the dbt documentation here:
+
+  https://docs.getdbt.com/docs/configure-your-profile
+
+One more thing:
+
+Need help? Don't hesitate to reach out to us via GitHub issues or on Slack:
+
+  https://community.getdbt.com/
+
+Happy modeling!
+
+[0m18:06:44.505889 [info ] [MainThread]: Setting up your profile.
+[0m18:10:04.779549 [info ] [MainThread]: Profile vertigo_dbt written to C:\Users\noyan\.dbt\profiles.yml using target's profile_template.yml and your supplied values. Run 'dbt debug' to validate the connection.
+[0m18:10:04.780549 [debug] [MainThread]: Command `dbt init` succeeded at 18:10:04.780549 after 200.48 seconds
+[0m18:10:04.781633 [debug] [MainThread]: Sending event: {'category': 'dbt', 'action': 'invocation', 'label': 'end', 'context': [<snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E50D3A4BC0>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E53C8EA000>, <snowplow_tracker.self_describing_json.SelfDescribingJson object at 0x000001E53C795370>]}
+[0m18:10:04.781633 [debug] [MainThread]: Flushing usage events
+[0m18:10:05.748578 [debug] [MainThread]: An error was encountered while trying to flush usage events
