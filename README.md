@@ -58,4 +58,5 @@ Result
 - dbt connection issues
   -fixed dataset name, region (EU), and OAuth setup
 
-
+Lookerstudio link:
+https://lookerstudio.google.com/reporting/497fd3c4-26d6-4680-9bd8-b039f5f50e6f
